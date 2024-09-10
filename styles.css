@@ -7,7 +7,7 @@ body {
 .configurator {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .controls {
@@ -26,22 +26,29 @@ body {
     margin-bottom: 10px;
 }
 
+/* Update for display-area */
 .display-area {
-    width: 750px;
-    height: 1600px;
-    position: relative;
+    width: 100%;
+    max-width: 750px; /* Set the maximum width to match the image's width */
+    margin: 0 auto; /* Center the display-area */
 }
 
+/* Update for image-container */
 .image-container {
     position: relative;
-    width: 750px;
-    height: 1600px;
+    width: 100%;
+    padding-top: 213.33%; /* Aspect ratio padding trick: (height/width) * 100 = 1600/750 */
+    max-width: 750px; /* Ensure the width doesn’t exceed the image size */
+    height: auto; /* Automatically adjust height to fit */
+    overflow: hidden; /* Prevent overflow */
 }
 
+/* Ensure images maintain their aspect ratio */
 .config-layer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Make sure the width adjusts with the container */
+    height: 100%; /* Set height to cover the container while keeping the aspect ratio */
+    object-fit: contain; /* Ensure the image maintains aspect ratio */
 }
