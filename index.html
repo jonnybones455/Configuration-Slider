@@ -3,19 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>Interactive Deployment Configurator</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Correct path -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Interactive Deployment Configurator</h1>
+    
     <div class="configurator">
+        <!-- Controls Section (Dropdowns) -->
         <div class="controls">
-            <!-- Your dropdowns here -->
+            <label for="background">Background:</label>
+            <select id="background" onchange="updateImages()">
+                <option value="urban">Urban</option>
+                <option value="suburban">Suburban</option>
+                <option value="rural">Rural</option>
+                <option value="transparent">Transparent</option>
+            </select>
+
+            <label for="pole">Pole:</label>
+            <select id="pole" onchange="updateImages()">
+                <option value="composite">Composite Pole</option>
+                <option value="lamppost">Lamp-post</option>
+                <option value="none">None</option>
+            </select>
+
+            <label for="cabinet">Cabinet:</label>
+            <select id="cabinet" onchange="updateImages()">
+                <option value="constant">Constant Cabinet</option>
+                <option value="constant-raised">Constant Cabinet Raised</option>
+                <option value="constant-elevated">Constant Cabinet Elevated</option>
+                <option value="barrade">Barrade Cabinet</option>
+                <option value="none">None</option>
+            </select>
+
+            <label for="shroud">Shroud:</label>
+            <select id="shroud" onchange="updateImages()">
+                <option value="shroud">Shroud</option>
+                <option value="no-shroud">No Shroud</option>
+            </select>
+
+            <label for="fusion">Fusion:</label>
+            <select id="fusion" onchange="updateImages()">
+                <option value="fusion">Fusion</option>
+                <option value="no-fusion">No Fusion</option>
+            </select>
+
+            <label for="power-fiber">Power and Fiber:</label>
+            <select id="power-fiber" onchange="updateImages()">
+                <option value="olt">OLT</option>
+                <option value="barrade">Barrade</option>
+                <option value="none">None</option>
+            </select>
         </div>
+
+        <!-- Display Area for Images -->
         <div class="display-area">
             <div id="image-container" class="image-container"></div>
         </div>
     </div>
-    <script src="script.js"></script> <!-- Correct path -->
+
+    <script src="script.js"></script>
 </body>
 </html>
-
