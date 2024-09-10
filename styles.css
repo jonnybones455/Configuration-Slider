@@ -26,27 +26,22 @@ body {
     margin-bottom: 10px;
 }
 
-/* Adjust display area */
 .display-area {
-    width: 100%; /* Make the display area responsive */
-    max-width: 750px; /* Don't allow it to exceed the original width of the image */
-    margin: 0 auto; /* Center the display-area */
-    height: auto;
+    width: 750px;
+    height: 1600px;
+    position: relative;
 }
 
-/* Image container */
 .image-container {
     position: relative;
-    width: 100%; /* Make sure the container adjusts its width */
-    height: auto; /* Allow the height to adjust proportionally */
-    max-width: 750px; /* Maximum width based on the image's original width */
-    overflow: hidden; /* Hide overflow */
+    width: 750px;
+    height: 1600px;
 }
 
-/* Ensure images retain their aspect ratio */
 .config-layer {
-    width: 100%; /* Image takes the full width of the container */
-    height: auto; /* Let the height scale proportionally */
-    max-width: 750px; /* Prevent the image from exceeding its natural width */
-    max-height: 1600px; /* Prevent the image from exceeding its natural height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
