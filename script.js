@@ -1,74 +1,53 @@
-// Get the HTML elements
-const backgroundSelect = document.getElementById('background');
-const poleSelect = document.getElementById('pole');
-const cabinetSelect = document.getElementById('cabinet');
-const shroudSelect = document.getElementById('shroud');
-const fusionSelect = document.getElementById('fusion');
-const powerFiberSelect = document.getElementById('power-fiber');
-const imageContainer = document.getElementById('image-container'); // A container for stacking images
-
-// Event listeners for each select element
-backgroundSelect.addEventListener('change', updateImages);
-poleSelect.addEventListener('change', updateImages);
-cabinetSelect.addEventListener('change', updateImages);
-shroudSelect.addEventListener('change', updateImages);
-fusionSelect.addEventListener('change', updateImages);
-powerFiberSelect.addEventListener('change', updateImages);
-
 // Function to update the images based on the selections
 function updateImages() {
-    // Clear the image container before adding new layers
-    imageContainer.innerHTML = '';
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = ''; // Clear the image container before adding new layers
 
-    // Get selected options
-    const background = backgroundSelect.value;
-    const pole = poleSelect.value;
-    const cabinet = cabinetSelect.value;
-    const shroud = shroudSelect.value;
-    const fusion = fusionSelect.value;
-    const powerFiber = powerFiberSelect.value;
+    const background = document.getElementById('background').value;
+    const pole = document.getElementById('pole').value;
+    const cabinet = document.getElementById('cabinet').value;
+    const shroud = document.getElementById('shroud').value;
+    const fusion = document.getElementById('fusion').value;
+    const powerFiber = document.getElementById('power-fiber').value;
 
     // Add the background image
     if (background !== 'transparent') {
-        const backgroundImg = createImageElement(`images/${background}.png`);
+        const backgroundImg = createImageElement(`images/${background}.png`); // Images are in the 'images/' folder
         imageContainer.appendChild(backgroundImg);
     }
 
     // Add the pole/lamp-post image
     if (pole !== 'none') {
-        const poleImg = createImageElement(`images/${pole}.png`);
+        const poleImg = createImageElement(`images/${pole}.png`); // Images are in the 'images/' folder
         imageContainer.appendChild(poleImg);
     }
 
-    // Add the cabinet image
+    // Add other layers similarly
     if (cabinet !== 'none') {
         const cabinetImg = createImageElement(`images/${cabinet}.png`);
         imageContainer.appendChild(cabinetImg);
     }
 
-    // Add the shroud image
     if (shroud !== 'no-shroud') {
         const shroudImg = createImageElement(`images/${shroud}.png`);
         imageContainer.appendChild(shroudImg);
     }
 
-    // Add the fusion image
     if (fusion !== 'no-fusion') {
         const fusionImg = createImageElement(`images/${fusion}.png`);
         imageContainer.appendChild(fusionImg);
     }
 
-    // Add the power/fiber image
     if (powerFiber !== 'none') {
         const powerFiberImg = createImageElement(`images/${powerFiber}.png`);
         imageContainer.appendChild(powerFiberImg);
     }
 }
 
-// Helper function to create an image element
+// Helper function to create image elements
 function createImageElement(src) {
     const img = document.createElement('img');
     img.src = src;
-    img.className = 'config-layer'; // Apply some styling for layering
+    img.className = 'config-layer'; // Add class for styling
     return img;
 }
