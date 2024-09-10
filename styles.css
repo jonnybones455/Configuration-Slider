@@ -26,29 +26,27 @@ body {
     margin-bottom: 10px;
 }
 
-/* Update for display-area */
+/* Adjust display area */
 .display-area {
-    width: 100%;
-    max-width: 750px; /* Set the maximum width to match the image's width */
+    width: 100%; /* Make the display area responsive */
+    max-width: 750px; /* Don't allow it to exceed the original width of the image */
     margin: 0 auto; /* Center the display-area */
+    height: auto;
 }
 
-/* Update for image-container */
+/* Image container */
 .image-container {
     position: relative;
-    width: 100%;
-    padding-top: 213.33%; /* Aspect ratio padding trick: (height/width) * 100 = 1600/750 */
-    max-width: 750px; /* Ensure the width doesn’t exceed the image size */
-    height: auto; /* Automatically adjust height to fit */
-    overflow: hidden; /* Prevent overflow */
+    width: 100%; /* Make sure the container adjusts its width */
+    height: auto; /* Allow the height to adjust proportionally */
+    max-width: 750px; /* Maximum width based on the image's original width */
+    overflow: hidden; /* Hide overflow */
 }
 
-/* Ensure images maintain their aspect ratio */
+/* Ensure images retain their aspect ratio */
 .config-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Make sure the width adjusts with the container */
-    height: 100%; /* Set height to cover the container while keeping the aspect ratio */
-    object-fit: contain; /* Ensure the image maintains aspect ratio */
+    width: 100%; /* Image takes the full width of the container */
+    height: auto; /* Let the height scale proportionally */
+    max-width: 750px; /* Prevent the image from exceeding its natural width */
+    max-height: 1600px; /* Prevent the image from exceeding its natural height */
 }
